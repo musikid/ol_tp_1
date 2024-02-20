@@ -1,0 +1,18 @@
+dependencies:
+- name: prometheus
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 25.13.0
+- name: prometheus-elasticsearch-exporter
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 5.5.0
+- name: grafana
+  repository: https://grafana.github.io/helm-charts
+  version: 7.3.0
+- name: elasticsearch
+  repository: https://helm.elastic.co
+  version: 7.17.3
+- name: ingress-nginx
+  repository: https://kubernetes.github.io/ingress-nginx
+  version: 4.9.1
+digest: sha256:7a8ff61fbe6a8c4e280d407eb67c6856cdfe36b666dd8419d1c3dc1808bb3f45
+generated: "2024-02-20T15:36:13.958591601+01:00"
