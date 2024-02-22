@@ -1,0 +1,22 @@
+{{ $fullName := .Chart.Name | trunc 63 | trimSuffix "-" }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $fullName }}-ingress
+spec:
+    ingressClassName: nginx
+    rules:
+    {{- range .Values.ingress.services }}
+    - host: {{ .name }}.{{ $fullName }}.local
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            {{ with .backend.service }}
+            service: 
+                name: {{ .name }}
+                port: 
+                    number: {{ .port }}
+            {{ end }}
+    {{- end }}

@@ -1,10 +1,10 @@
 apiVersion: v2
-name: app
+name: ol-projet
 description: Project for the 'Outils logiciels' course
 kubeVersion: ">=1.21"
 type: application
 
-version: "0.2.7"
+version: "0.2.8"
 
 appVersion: "0.1.2"
 
