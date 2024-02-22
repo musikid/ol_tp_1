@@ -1,12 +1,6 @@
-fullnameOverride: ""
-
 ingress:
   className: "nginx"
   host: "monitoring.local"
-  annotations:
-    {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
   services:
     - name: grafana
       backend:
@@ -26,8 +20,8 @@ ingress:
     - name: alertmanager
       backend:
         service:
-          name: monitoring-prometheus-alertmanager
-          port: 80
+          name: monitoring-alertmanager
+          port: 9093
 
 prometheus:
   serverFiles:
